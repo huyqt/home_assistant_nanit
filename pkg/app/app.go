@@ -213,7 +213,7 @@ func (app *App) getRemoteStreamURL(babyUID string) string {
 
 func (app *App) getLocalStreamURL(babyUID string) string {
 	if app.Opts.RTMP != nil {
-		tpl := "rtmp://{publicAddr}/local/{babyUid}"
+		tpl := "rtmp://{publicAddr}/{babyUid}"
 		return strings.NewReplacer("{publicAddr}", app.Opts.RTMP.PublicAddr, "{babyUid}", babyUID).Replace(tpl)
 	}
 
